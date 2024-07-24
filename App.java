@@ -16,6 +16,9 @@ public class App {
         int num2 = sc.nextInt();
 
         System.out.println("사칙연산 기호를 입력하세요: ");
+        char operator = sc.next().charAt(0);
+
+        System.out.println("operator = " + operator);
 
     }
 }
