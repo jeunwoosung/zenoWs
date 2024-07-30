@@ -61,6 +61,4 @@ public class Calculator {
         this.linkedlist = linkedlist; // private접근제어자 필드에 Stter메서드를 통해 값을 저장하거나 수정할수 있다.
     }
 
-
-
     }
