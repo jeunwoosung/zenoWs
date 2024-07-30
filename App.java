@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
 
 
+
         int[] results = new int[10]; //results 라는 int배열 10을 생성한 변수를 가지고있게 만듬.
         LinkedList<Integer> resultlist = new LinkedList<Integer>(); // 10의 계산을 넘어가게 되면 무한으로 추가하거나 삭제할수있게  Linked List 자료구조 사용
         boolean usedLinkedList = false; // usedLinkedList란 말 그대로 사용할것이냐 했을때 일단은 거짓으로 선언해두고
@@ -33,8 +34,6 @@ public class App {
             char operator = sc.next().charAt(0); // operator는 원래 String 변수이지만 charAt(0);이라는 기본형 변수를 활용해서 char 변수로 변경
 
 
-
-
             int result = 0; //결과값은 0부터 시작해라.
 
             switch (operator) {
@@ -52,8 +51,7 @@ public class App {
 
                 case '/':
                     if (num2 == 0) {
-                        System.out.println("나눗셈 연산에서 분모(두번쨰 정수)에 0이 입력 될 수 없습니다.");
-                        continue; //나눗셈 오류가 나오게되면 다시 계산할수있도록 함.
+                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력 될 수 없습니다.");
                     } else {
                         result = num1 / num2;
 
@@ -62,15 +60,11 @@ public class App {
 
                 default:
                     System.out.println("알수없는 연산입니다.");
-                    continue;
+
 
             }
 
-
-
-            System.out.println("결과 : " + result);
-
-            if (!usedLinkedList) { // 결과의 값이 10개 미만의 배열의 저장이 되었을떄 LinkedList를 사용하지 않도록 함.
+            if (!usedLinkedList) { // 결과의 값이 10개 미만의 배열의 저장이 되었을때 LinkedList를 사용하지 않도록 함.
                 if (count < results.length) { // results배열의 수가 꽉찰때까지 작동하게 하는 방식 * results.length는 현재 문자열이나 문자가 없기때문에 배열의 길이를 뜻한다.
                     results[count] = result; // count 배열에 결과값이 저장될수있도록 하는 방식
                     count++;
@@ -79,7 +73,7 @@ public class App {
                     for (int i : results) { //results라는 배열을 담은 int i 의 변수를 계속 추가해라.
                         resultlist.add(i);
                     }
-                        resultlist.add(result);
+                    resultlist.add(result);
                 }
             } else { // 11번째 이상 결과값이 나올시에 만약 사용자입력에서 remove를 입력을 하게되었을시 가장먼저 저장된 배열의 값이 삭제된다.
 
@@ -102,27 +96,26 @@ public class App {
                         }
                     }
                 }else {
-                for (int i : resultlist)
-                    System.out.println(i);
+                    for (int i : resultlist)
+                        System.out.println(i);
                 }
             }
 
 
 
-                System.out.println("더 계산하시겠습니까?(exit 입력 시 종료)");
+            System.out.println("더 계산하시겠습니까?(exit 입력 시 종료)");
 
-                String input1 = sc.next();
-                if (input1.equals("exit")) {
+            String input1 = sc.next();
+            if (input1.equals("exit")) {
                 break;
-                }
-
-
             }
-            sc.close();
-        }
 
+
+        }
+        sc.close();
     }
 
+}
 
 
 
