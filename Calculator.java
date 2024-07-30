@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 
 public class Calculator {
-    private LinkedList<Double> linkedlist = new LinkedList<>(); //연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
+    private LinkedList<Double> linkedlist; //연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
 
-
+        public Calculator(){ // 기본생성자를 선언하고
+            linkedlist = new LinkedList<>(); //새로운 인스턴스를 생성할때마다 생성자를 통해서 연산결과를 linkedlist가 초기화 됨.
+        }
 
     public double calculate(double num1, double num2, char operator) { // App의 Main메소드에서 num1,num2,operator를 사용자 입력값을 받은뒤 연산에 적용하기위한 매개변수.
 
