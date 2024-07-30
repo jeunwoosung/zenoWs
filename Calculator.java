@@ -1,6 +1,7 @@
 package calculator;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 
 public class Calculator {
@@ -47,6 +48,17 @@ public class Calculator {
 
     }
 
+    public void inquiryResults(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("저장된 연산결과를 조회 하시겠습니까? (inquiry 입력시 조회)");
+        String input = sc.next();
+        if (input.equals("inquiry")) {// 사용자 입력창에 inquiry를 입력하였을시에
+            LinkedList<Double> linkedlist = getLinkedlist(); // getLinkedlist를 호출하는 담은 객체 likedlist를 선언하고.
+            for (double results : linkedlist) { //향상된for문을 사용해서 double타입의 results으로 선언한 변수 내부의 내용들을
+                System.out.println(results); //출력한다.
+            }
+        }
+    }
 
     private void addlikedlist(double result) {
         linkedlist.add(result);  //linkedlist변수에 결과값을 추가하게 만드는것

@@ -10,12 +10,6 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-
-
-
-
-
-
             while (true) {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
 
@@ -33,18 +27,9 @@ public class App {
                 double result = calculator.calculate(num1, num2, operator);
                 System.out.println("결과 = " + result);
 
+                calculator.inquiryResults();
 
 
-                System.out.println("저장된 연산결과를 조회 하시겠습니까? (inquiry 입력시 조회)");
-                String input = sc.next();
-                if (input.equals("inquiry")) {// 사용자 입력창에 inquiry를 입력하였을시에
-                   LinkedList<Double> linkedlist = calculator.getLinkedlist(); // getLinkedlist를 호출하는 담은 객체 likedlist를 선언하고.
-                   for (double results : linkedlist) { //향상된for문을 사용해서 double타입의 results으로 선언한 변수 내부의 내용들을
-                       System.out.println(results); //출력한다.
-                   }
-
-
-                }
 
                 System.out.println("더 계산하시겠습니까?(exit 입력 시 종료)");
 
