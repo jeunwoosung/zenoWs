@@ -43,6 +43,7 @@ public class App {
                        System.out.println(results); //출력한다.
                    }
 
+
                 }
 
                 System.out.println("더 계산하시겠습니까?(exit 입력 시 종료)");
